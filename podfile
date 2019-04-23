@@ -1,0 +1,9 @@
+platform :ios, '7.0'
+
+target "NetworkListener" do
+    pod 'FMDB/SQLCipher', '~> 2.5'
+    pod 'Masonry', '~> 1.1.0'
+    pod 'LKDBHelper', '~> 2.5.1'
+    pod 'SVProgressHUD'
+    pod 'FrameAccessor', '~> 2.0'
+end
