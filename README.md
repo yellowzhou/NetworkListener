@@ -10,7 +10,7 @@ Listener是一个网络请求监听库，可以监控App内所有的HTTP请求�
 
 * [使用说明](#使用说明)
 * [WKWebView遵循NSURLProtocol](#WKWebView遵循NSURLProtocol)
-* [请求信息记录、缓存处理、流量统计](#请求信息记录、缓存处理、流量统计)
+* [请求信息记录、缓存处理、流量统计](#请求信息记录-缓存处理-流量统计)
 * [处理结果](#处理结果)
 
 ## 使用说明
@@ -64,7 +64,7 @@ FOUNDATION_STATIC_INLINE SEL UnregisterSchemeSelector() {
 }
 ```
 
-## 请求信息记录、缓存处理、流量统计
+## 请求信息记录 缓存处理 流量统计
 ```
 
 - (void)stopLoading {
