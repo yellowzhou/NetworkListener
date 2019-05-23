@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define SB(block,args...)  block?block(args):nil
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (Extension)

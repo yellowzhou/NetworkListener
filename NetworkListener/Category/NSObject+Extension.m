@@ -35,7 +35,7 @@
 {
     if ([self isKindOfClass:[NSData class]]) {
         return [self copy];
-    } else if ([self isKindOfClass:[NSDictionary class]]) {
+    } else {
         return [NSJSONSerialization dataWithJSONObject:self options:kNilOptions error:nil];
     }
     return nil;

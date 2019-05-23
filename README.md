@@ -8,7 +8,12 @@ Listener是一个网络请求监听库，可以监控App内所有的HTTP请求�
 
 如果在古老版本使用 CFNetwork 框架发起的网络请求将无法实现网络拦截
 
-## 使用
+* [使用说明](#使用说明)
+* [WKWebView遵循NSURLProtocol](#WKWebView遵循NSURLProtocol)
+* [请求信息记录、缓存处理、流量统计](#请求信息记录、缓存处理、流量统计)
+* [处理结果](#处理结果)
+
+## 使用说明
 1. 是否开启网络监听
 ```
 + (void)networkListener:(BOOL)enabled;
@@ -18,7 +23,7 @@ Listener是一个网络请求监听库，可以监控App内所有的HTTP请求�
 #define URL_PROTOCOL_LOAD_FINISH_NOTIFICATION    @"URL_PROTOCOL_LOAD_FINISH_NOTIFICATION"
 ```
 
-## WKWebView 遵循NSURLProtocol
+## WKWebView遵循NSURLProtocol
 ```
 FOUNDATION_STATIC_INLINE Class ContextControllerClass() {
     static Class cls;
@@ -83,6 +88,7 @@ FOUNDATION_STATIC_INLINE SEL UnregisterSchemeSelector() {
 }
 ```
 
+## 处理结果
 ![github](https://github.com/yellowzhou/NetworkListener/blob/master/image/home.png "github")
 ![github](https://github.com/yellowzhou/NetworkListener/blob/master/image/info.png "github")
 ![github](https://github.com/yellowzhou/NetworkListener/blob/master/image/webview.png "github")

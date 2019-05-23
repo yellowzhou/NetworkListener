@@ -26,6 +26,7 @@
 		0F994CF1226F050C009B53DB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F994CE9226F050C009B53DB /* WebViewController.m */; };
 		0F994CF2226F050C009B53DB /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F994CEB226F050C009B53DB /* SettingCell.m */; };
 		0F994CF3226F050C009B53DB /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F994CEE226F050C009B53DB /* SettingViewController.m */; };
+		0FAA1ACC2272A35E0021FC53 /* NSJSONSerialization+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA1ACB2272A35E0021FC53 /* NSJSONSerialization+Extension.m */; };
 		ACC57A8E7CF835D25228E344 /* libPods-NetworkListener.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E80C9093F05F2ADB07FFBE1 /* libPods-NetworkListener.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		0F994CEC226F050C009B53DB /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		0F994CED226F050C009B53DB /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		0F994CEE226F050C009B53DB /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		0FAA1ACA2272A35E0021FC53 /* NSJSONSerialization+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+Extension.h"; sourceTree = "<group>"; };
+		0FAA1ACB2272A35E0021FC53 /* NSJSONSerialization+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+Extension.m"; sourceTree = "<group>"; };
 		9E80C9093F05F2ADB07FFBE1 /* libPods-NetworkListener.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkListener.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33E4670A1D8FFB2FE8FA4B5 /* Pods-NetworkListener.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkListener.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkListener/Pods-NetworkListener.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,14 +127,14 @@
 		0F994CC9226F047A009B53DB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0F994CD1226F047A009B53DB /* PMURLProtocol.h */,
 				0F994CCA226F047A009B53DB /* PMURLProtocol.m */,
 				0F994CCB226F047A009B53DB /* PMNetworkHttpModel.h */,
+				0F994CD0226F047A009B53DB /* PMNetworkHttpModel.m */,
 				0F994CCC226F047A009B53DB /* PMURLSessionConfiguration.h */,
 				0F994CCD226F047A009B53DB /* PMNetworkCache.m */,
 				0F994CCE226F047A009B53DB /* PMNetworkCache.h */,
 				0F994CCF226F047A009B53DB /* PMURLSessionConfiguration.m */,
-				0F994CD0226F047A009B53DB /* PMNetworkHttpModel.m */,
-				0F994CD1226F047A009B53DB /* PMURLProtocol.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -149,11 +152,13 @@
 			isa = PBXGroup;
 			children = (
 				0F994CD6226F047A009B53DB /* NSObject+Extension.h */,
-				0F994CD7226F047A009B53DB /* NSString+Extension.h */,
-				0F994CD8226F047A009B53DB /* NSDate+Extension.h */,
 				0F994CD9226F047A009B53DB /* NSObject+Extension.m */,
+				0F994CD8226F047A009B53DB /* NSDate+Extension.h */,
 				0F994CDA226F047A009B53DB /* NSDate+Extension.m */,
+				0F994CD7226F047A009B53DB /* NSString+Extension.h */,
 				0F994CDB226F047A009B53DB /* NSString+Extension.m */,
+				0FAA1ACA2272A35E0021FC53 /* NSJSONSerialization+Extension.h */,
+				0FAA1ACB2272A35E0021FC53 /* NSJSONSerialization+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				0F994CDF226F047A009B53DB /* PMNetworkHttpModel.m in Sources */,
 				0F994CF0226F050C009B53DB /* WKWebViewController.m in Sources */,
 				0F994CEF226F050C009B53DB /* ListenerListController.m in Sources */,
+				0FAA1ACC2272A35E0021FC53 /* NSJSONSerialization+Extension.m in Sources */,
 				0F994CF2226F050C009B53DB /* SettingCell.m in Sources */,
 				0F994CE3226F047A009B53DB /* NSString+Extension.m in Sources */,
 				0F994CB5226F044A009B53DB /* AppDelegate.m in Sources */,
@@ -461,11 +467,17 @@
 			baseConfigurationReference = 03E870F945684A239053CEF3 /* Pods-NetworkListener.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7KKJ2BB6A;
 				INFOPLIST_FILE = NetworkListener/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yellow.demo.NetworkListener;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yellowzhou.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -475,11 +487,17 @@
 			baseConfigurationReference = F33E4670A1D8FFB2FE8FA4B5 /* Pods-NetworkListener.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7KKJ2BB6A;
 				INFOPLIST_FILE = NetworkListener/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yellow.demo.NetworkListener;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yellowzhou.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
